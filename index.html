@@ -1,1 +1,205 @@
-ALAN <> Hairclub
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HairClub + ALAN</title>
+    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" />
+    <link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" href="https://www.hairclub.com/static/imgs/apple-icon-180x180.png" />
+    <style>
+
+      @import url("https://rsms.me/inter/inter.css");
+      @import url("https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css");
+      
+      html, body { padding: 0; margin: 0; }
+      
+      :root {
+        --color-background: #F0F2F5;
+        --color-primary: blue;
+        --color-link: blue;
+        --color-text: #323648;
+        --color-green: #03A87C;
+        --color-red: #FF5722;
+        --color-border: rgba(0,0,0,0.1);
+      }
+      
+      * { user-select: none; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+      
+      body { font-family: "Inter", sans-serif; background: var(--color-background); color: var(--color-text); opacity: 0; transition: 2s all ease; }
+      body.loaded { opacity: 1; }
+      h1, h2, h3, h4, h5, h6, p { margin: 0; }
+      
+      a { color: var(--color-link); }
+      .clear { clear: both; }
+      .center { text-align: center; }
+      .relative { position: relative; }
+      .absolute { position: absolute; }
+      .block { display: block; }
+      .inline-block { display: inline-block; }
+        .width-full { width: 100%; }
+      
+      .fade-in { animation-duration: 1s; animation-fill-mode: forwards; animation-name: fade-in-animation; backface-visibility: hidden; opacity: 0; }
+      .fade-out { animation-name: fade-in-fade-out-animation; }
+      
+      
+      .options { position: absolute; left: 0; width: 100%; padding: 30px 0 0; margin: -30px 0 0; }
+      button { -webkit-appearance: none; appearance: none; outline: 0 none; font-family: inherit; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 6px; padding: 8px 20px; font-size: 15px; margin: 0 5px 0; min-width: 120px; line-height: 20px; font-weight: 500; cursor: pointer; color: #4b5966; }
+      button span.mdi { margin-right: 10px; }
+      
+      .lp { position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #323648; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+      .lp .container { width: calc(100% - 30px); max-width: 950px; margin: 0 auto; position: relative; }
+      .lp .hero { position: relative; background: white; text-align: left; padding: 60px 0 80px; box-shadow: 0 1px 1px rgba(0,0,0,0.1); z-index: 1; }
+      .lp .hero .logo { width: 100%; max-width: 200px; margin: 0 0 60px; }
+      .lp .hero-text { position: relative; padding: 0 50px 0 0; }
+      .lp .hero h1 { font-size: 42px; max-width: 400px; margin: 0 0 20px; }
+      .lp .hero p { font-size: 18px; line-height: 1.8; margin: 0 0 20px; opacity: 0.8; max-width: 400px; }
+      .lp .hero p.terms-text { font-size: 12px; opacity: 0.6; padding: 0 5px; width: 100%; max-width: 400px; margin: 0; text-align: center; }
+      .lp .hero .image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-image: url("https://ucarecdn.com/e19537a1-eaef-4a34-9be5-aa066881db40/-/quality/lighter/-/progressive/yes/-/max_icc_size/10/"); background-size: cover; background-position: center center; }
+      .lp .form { width: 100%; max-width: 400px; font-size: 0; padding-top: 10px; }
+      .lp input { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 15px; }
+      .lp input[type=text], .lp input[type=email], .lp input[type=tel] { border: 1px solid #DDDDDD; }
+      .lp input[type=text]:focus, .lp input[type=email]:focus, .lp input[type=tel]:focus { border: 1px solid #227EF7; }
+      .lp input[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 10px; border: 2px solid #227EF7; }
+      .lp input[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
+      .lp .features { position: relative; background: #FAFAFA; color: #333333; padding: 80px 0; overflow: hidden; text-align: center; font-size: 17px; line-height: 1.8; }
+      .lp .features h2 { font-size: 40px; line-height: 1.3; margin: 0 0 30px; margin-left: auto; margin-right: auto; }
+      .lp .features p { max-width: 660px; margin: -10px auto 50px; font-size: 18px; }
+      .lp .features ul { padding-left: 20px; margin: 0 0 -10px; list-style: none; width: calc(100% + 70px); font-size: 0; padding: 0; }
+      .lp .features ul li { padding: 0 0 10px 5px; width: calc((100% / 3) - 70px); margin: 0 70px 50px 0; display: inline-block; font-size: 15px; vertical-align: top; padding: 0; }
+      .lp .features ul li .icon { background: #621E31; display: inline-block; margin: 0 0 25px; border-radius: 100%; }
+      .lp .features ul li .icon span.mdi { color: white; padding: 15px; display: block; line-height: 1; font-size: 40px;}
+      .lp .features ul li h3 { font-weight: 600; font-size: 20px; line-height: 1.2; margin: 0 0 15px; }
+      .lp .features ul li p { font-size: 17px; margin: 0 auto; }
+      
+      @media screen and (max-width: 1023px) {
+        .lp .container { margin: 0 auto; }
+        .lp .hero .container { width: 50%; padding: 0 30px; margin: 0; }
+        .fb .nav img.mid { display: none; }
+        .lp .features .container { max-width: 400px; padding: 0 15px; }
+        .lp .features h2 { font-size: 28px; max-width: 300px; }
+        .lp .features p { font-size: 16px !important; max-width: 300px; }
+        .lp .features ul { width: auto; margin: 0 -10px; }
+        .lp .features ul li { width: 100%; padding: 0 15px; margin: 0 0 30px; }
+      }
+      
+      @media screen and (max-width: 700px) {
+        body { padding: 10px; }
+        .lp .container { width: 100%; top: auto; transform: none; }
+        .lp .hero .container  { width: 100%; margin: 0 auto; }
+        .lp .hero { padding: 0 0 30px; }
+        .lp .hero .logo { max-width: 150px; margin: 0 auto; padding: 20px 0 240px; }
+        .lp .hero .image { top: 70px; left: 0; width: 100%; height: 200px; }
+        .lp .hero-text { padding: 0; text-align: center; }
+        .lp .hero h1 { font-size: 28px; max-width: 270px; margin: 0 auto 20px; }
+        .lp .hero p { font-size: 16px; margin: 0 auto 20px; max-width: 300px; }
+        .lp .hero p.terms-text { font-size: 12px; margin: 0 auto; padding: 0; line-height: 1.4; max-width: 200px; }
+        .lp .form { margin: 0 auto; max-width: 300px; }
+        .lp .features { padding: 40px 0 10px; }
+        .lp .features p { margin-bottom: 40px; }
+      }
+            
+      @keyframes fade-in-animation {
+        0%   { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: none; }
+      }
+      
+      @keyframes blink {
+        50% {
+          opacity: 1;
+        }
+      }
+      
+    </style>
+  </head>
+  <body class="lp fade-in">
+    <div class="hero">
+      <div class="image"></div>
+      <div class="container">
+        <div class="logo">
+          <svg x="0px" y="0px" viewBox="0 0 559 108" style="enable-background:new 0 0 559 108;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>Hair Club Logo</title>
+              <defs></defs>
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g class="hair-club-logo-svg hairclub-logo-white" fill="#581024">
+                      <g class="logo">
+          <path d="M56.5,13.5h18.1v81.9H56.5V62.8h-24v32.7H14.3V13.5h18.1v31.7h24V13.5z M161.1,95.5h18.4V13.5h-18.4V95.5z M239.2,62.9
+          	l15.9,32.6h-19.8L221.6,66h-10.9v29.5h-18.3V13.5h31.7c21.4,0,28.9,14.1,29,26.2C253.3,50.3,247.6,58.9,239.2,62.9z M224.2,29.9
+          	h-13.6v19.3h13.8c7.1,0,10.7-3.2,10.7-9.6C235.1,34.9,231.4,29.9,224.2,29.9z M294.5,28.9c4.4,0,8.2,1.5,10.2,4.1
+          	c1.9,2.3,2.8,4.5,3.1,7.2L308,42h18.4l-0.1-2.2c-0.5-5.1-2.4-12.3-8-18.1c-6-6.1-14.6-9.6-23.7-9.6c-9.2,0-17.4,3.2-23.5,9.4
+          	c-8.6,8.6-10.3,18.6-10.3,33.1c0,14.4,1.7,24.5,10.3,33.1c6.1,6.1,14.2,9.3,23.5,9.3c9,0,17.6-3.6,23.7-9.8c4.4-4.5,7.3-11,8-18.2
+          	l0.1-2.2H308l-0.2,1.8c-0.3,2.9-1.3,5.3-3.1,7.5c-2.1,2.6-5.9,4.2-10.2,4.2c-4,0-7.8-1.7-10.6-4.6c-4.8-5-4.8-14.3-4.8-21.1
+          	s0-16,4.9-21.1C286.7,30.6,290.5,28.9,294.5,28.9z M354.1,13.5h-18.2v81.9h49.6V78.1h-31.5V13.5z M435.8,63.3
+          	c0,11.6-3.5,16.7-12.4,16.7c-8.9,0-12.4-5.2-12.4-16.7V13.5h-18.1v50c0,21.5,10.1,33.3,30.5,33.3c20.5,0,30.5-11.8,30.5-33.3v-50
+          	h-18.1V63.3z M525.7,70.8c0,8.1-3,14.7-8.7,19.1c-6.2,4.7-13.3,5.7-22,5.7h-30v-82h30c8.2,0,14.2,1.5,19.1,4.6
+          	c6.1,4,9.9,11.1,9.9,18.6c0,5-2,12.2-7.6,16.5C522.3,57.1,525.7,63.7,525.7,70.8z M483.1,78.8h12.5c3.5,0,11.8-0.8,11.8-8.3
+          	c0-6.3-3.7-9.3-11.3-9.3h-13V78.8z M495.9,45.3c6.7,0,9.8-2.4,9.8-7.7c0-5.3-3.3-7.9-10.1-7.9h-12.5v15.6H495.9z M128.7,13.5
+          	l25.5,81.9h-19.1l-4.5-15h-26l-4.6,15H81.6l26-81.9H128.7z M117.9,37.8l-8.1,26.1h15.9L117.9,37.8z M538.9,30c-5,0-8.8-3.9-8.8-8.9
+          	s3.7-8.9,8.8-8.9s8.8,3.9,8.8,8.9S543.9,30,538.9,30z M538.9,13.7c-4.3,0-7.1,3.1-7.1,7.4s2.8,7.4,7.1,7.4c4.3,0,7.1-3.1,7.1-7.4
+          	S543.2,13.7,538.9,13.7z M540.9,25.6l-1.6-3.4h-1.8v3.4h-1.6v-9.3h3.4c1.8,0,3.3,1,3.3,2.9c0,1.2-0.5,2.2-1.7,2.7l1.7,3.7H540.9z
+          	 M539.3,17.8h-1.8v2.9h1.8c1,0,1.6-0.4,1.6-1.5C540.9,18.2,540.2,17.8,539.3,17.8z"></path>
+                      </g>
+                  </g>
+              </g>
+          </svg>              
+        </div>            
+        <div class="hero-text">
+          <h1>Get a free hair health consultation.</h1>
+          <p>Promotion is limited to the first 15 people. Usually fills in less than 5 days. Claim your free spot now!</p>
+        </div>
+        <div class="form">
+          <form>
+            <input type="text" id="first-name" placeholder="First Name" required />
+            <input type="text" id="last-name" placeholder="Last Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="tel" id="phone" placeholder="Phone Number" required />
+            <div>
+              <input type="submit" value="Sign Up">
+            </div>
+            <p class="terms-text">By selecting "Sign Up" you agree to our Terms & Conditions.</p>
+          </form>              
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <div class="container">
+        <h2>Powerful Products. Proven Results.</h2>
+        <p>We understand that everyone’s hair is unique so we provide personalized hair solutions for people of all ages with different hair types and degrees of loss.</p>
+        <ul>
+          <li>
+            <div class="icon"><span class="mdi mdi-bottle-tonic-plus"></span></div>
+            <h3>Regrowth</h3>
+            <p>Our regrowth solutions are non-surgical options that have shown to regrow hair when used as directed.</p>
+          </li>
+          <li>
+            <div class="icon"><span class="mdi mdi-seat"></span></div>
+            <h3>Replacement</h3>
+            <p>Our replacement solutions are perfect for those who need new hair in certain areas quickly and are ideal for those in advanced stages of hair thinning or loss.</p>
+          </li>
+          <li>
+            <div class="icon"><span class="mdi mdi-face-man-shimmer"></span></div>
+            <h3>Restoration</h3>
+            <p>Our restoration solutions are advanced surgical options that are best for people with moderate hair thinning or loss.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script>
+      // Make URL parameters readable
+      
+      var getUrlParameter=function(r){var t,e,n=decodeURIComponent(window.location.search.substring(1)).split("&");for(e=0;e<n.length;e++)if((t=n[e].split("="))[0]===r)return void 0===t[1]||t[1]};
+      
+      // Get Step
+      
+      if ( getUrlParameter("step") == "1") {
+        step = "1";
+      };
+      
+      // On Load Actions
+      
+      $("body").addClass("loaded");
+      
+    </script>
+  </body>
+</html>
