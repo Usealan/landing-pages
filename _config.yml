@@ -1,0 +1,15 @@
+title: ALAN - Hairclub Landing Pages
+description: Automatically nurture leads via text message and turn them into potential customers. 
+timezone: UTC
+port: 2000
+markdown: kramdown
+theme: minima
+exclude:
+- Gemfile
+- Gemfile.lock
+sass:
+  style: compressed
+minima:
+  date_format: "%b %-d, %Y"
+sass:
+  style: compressed
