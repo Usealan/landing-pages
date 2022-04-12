@@ -65,6 +65,11 @@ a { color: var(--color-link); }
 .footer .links li a { text-decoration: none; color: inherit; }
 .footer .links li a:hover { text-decoration: underline; }
 
+.confirmation { opacity: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.confirmation .container { position: relative; top: 50%; transform: translateY(-50%); margin: 0 auto; max-width: 400px; text-align: center; }
+.confirmation img { max-width: 200px; }
+.confirmation .container h1 { font-size: 20px; line-height: 1.6; font-weight: 500; max-width: 300px; margin: 20px auto 0; }
+
 @media screen and (max-width: 1023px) {
   .lp .container { margin: 0 auto; }
   .lp .hero .container { width: 50%; padding: 0 30px; margin: 0; }
