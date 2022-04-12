@@ -1,0 +1,105 @@
+---
+---
+
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css");
+
+html, body { padding: 0; margin: 0; }
+
+:root {
+  --color-background: #F0F2F5;
+  --color-primary: blue;
+  --color-link: blue;
+  --color-text: #323648;
+  --color-green: #03A87C;
+  --color-red: #FF5722;
+  --color-border: rgba(0,0,0,0.1);
+}
+
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+
+body { font-family: "Inter", sans-serif; background: var(--color-background); color: var(--color-text); opacity: 0; transition: 2s all ease; }
+body.loaded { opacity: 1; }
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+
+a { color: var(--color-link); }
+.clear { clear: both; }
+.center { text-align: center; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+  .width-full { width: 100%; }
+
+.fade-in { animation-duration: 1s; animation-fill-mode: forwards; animation-name: fade-in-animation; backface-visibility: hidden; opacity: 0; }
+.fade-out { animation-name: fade-in-fade-out-animation; }      
+.lp { position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #323648; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+.lp .container { width: calc(100% - 30px); max-width: 950px; margin: 0 auto; position: relative; }
+.lp .hero { position: relative; background: white; text-align: left; padding: 60px 0 80px; box-shadow: 0 1px 1px rgba(0,0,0,0.1); z-index: 1; }
+.lp .hero .logo { width: 100%; max-width: 200px; margin: 0 0 60px; }
+.lp .hero-text { position: relative; padding: 0 50px 0 0; }
+.lp .hero h1 { font-size: 42px; max-width: 400px; margin: 0 0 20px; }
+.lp .hero p { font-size: 18px; line-height: 1.8; margin: 0 0 20px; opacity: 0.8; max-width: 400px; }
+.lp .hero p.terms-text { font-size: 12px; opacity: 0.6; padding: 0 5px; width: 100%; max-width: 400px; margin: 0; text-align: center; }
+.lp .hero .image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-size: cover; background-position: center center; }
+.lp .form { width: 100%; max-width: 400px; font-size: 0; padding-top: 10px; }
+.lp input { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 15px; }
+.lp input[type=text], .lp input[type=email], .lp input[type=tel] { border: 1px solid #DDDDDD; }
+.lp input[type=text]:focus, .lp input[type=email]:focus, .lp input[type=tel]:focus { border: 1px solid #227EF7; }
+.lp input[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 10px; border: 2px solid #227EF7; }
+.lp input[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
+.lp .features { position: relative; background: #FAFAFA; color: #333333; padding: 80px 0; overflow: hidden; text-align: center; font-size: 17px; line-height: 1.8; }
+.lp .features h2 { font-size: 40px; line-height: 1.3; margin: 0 0 30px; margin-left: auto; margin-right: auto; }
+.lp .features p { max-width: 660px; margin: -10px auto 50px; font-size: 18px; }
+.lp .features ul { padding-left: 20px; margin: 0 0 -10px; list-style: none; width: calc(100% + 70px); font-size: 0; padding: 0; }
+.lp .features ul li { padding: 0 0 10px 5px; width: calc((100% / 3) - 70px); margin: 0 70px 50px 0; display: inline-block; font-size: 15px; vertical-align: top; padding: 0; }
+.lp .features ul li .icon { background: #621E31; display: inline-block; margin: 0 0 25px; border-radius: 100%; }
+.lp .features ul li .icon span.mdi { color: white; padding: 15px; display: block; line-height: 1; font-size: 40px;}
+.lp .features ul li h3 { font-weight: 600; font-size: 20px; line-height: 1.2; margin: 0 0 15px; }
+.lp .features ul li p { font-size: 17px; margin: 0 auto; }
+
+.footer { padding: 50px 20px; }
+.footer p { font-size: 13px; margin: 0 0 20px; line-height: 1.8; }
+.footer .links { list-style: none; padding: 30px 0 0; text-align: center; font-size: 14px; margin: 30px 0 0; border-top: 1px solid rgba(0,0,0,0.1); }
+.footer .links li { display: inline-block; margin: 0 10px; }
+.footer .links li a { text-decoration: none; color: inherit; }
+.footer .links li a:hover { text-decoration: underline; }
+
+@media screen and (max-width: 1023px) {
+  .lp .container { margin: 0 auto; }
+  .lp .hero .container { width: 50%; padding: 0 30px; margin: 0; }
+  .fb .nav img.mid { display: none; }
+  .lp .features .container { max-width: 400px; padding: 0 15px; }
+  .lp .features h2 { font-size: 28px; max-width: 300px; }
+  .lp .features p { font-size: 16px !important; max-width: 300px; }
+  .lp .features ul { width: auto; margin: 0 -10px; }
+  .lp .features ul li { width: 100%; padding: 0 15px; margin: 0 0 30px; }
+}
+
+@media screen and (max-width: 700px) {
+  .lp .container { width: 100%; top: auto; transform: none; }
+  .lp .hero .container  { width: 100%; margin: 0 auto; }
+  .lp .hero { padding: 0 0 30px; }
+  .lp .hero .logo { max-width: 150px; margin: 0 auto; padding: 20px 0 240px; }
+  .lp .hero .image { top: 70px; left: 0; width: 100%; height: 200px; }
+  .lp .hero-text { padding: 0; text-align: center; }
+  .lp .hero h1 { font-size: 28px; max-width: 270px; margin: 0 auto 20px; }
+  .lp .hero p { font-size: 16px; margin: 0 auto 20px; max-width: 300px; }
+  .lp .hero p.terms-text { font-size: 12px; margin: 0 auto; padding: 0; line-height: 1.4; max-width: 200px; }
+  .lp .form { margin: 0 auto; max-width: 300px; }
+  .lp .features { padding: 40px 0 10px; }
+  .lp .features p { margin-bottom: 40px; }
+  .footer { padding: 30px 20px; }
+  .footer .links { font-size: 13px; line-height: 2.5; }
+}
+      
+@keyframes fade-in-animation {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
