@@ -1,0 +1,334 @@
+---
+permalink: /hairclub/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" />
+    <title>HairClub Landing Page</title>
+    <link rel="apple-touch-icon" href="https://usealan.com/assets/images/icon.png">
+    <link rel="shortcut icon" href="https://usealan.com/assets/images/icon.ico" />
+    <style>
+      @import url("https://rsms.me/inter/inter.css");
+      @import url("https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css");
+      * { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; outline: 0 none; shape-renderer: crispEdges;	-moz-osx-font-smoothing: grayscale; }
+      :root { --blue: #5F6EEE; --yellow: #EEDF5F; --green: #33B679; --orange: #EE935F; --red: #F4511E; }
+      .af { font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 17px; line-height: 1.8; position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 15px; }
+      .af a { color: blue; }
+      .af .wrapper { position: relative; margin: 0 auto; width: 100%; height: 100%; max-width: 1000px; }
+      .af .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0 auto; }
+      .af input { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
+      .af input[type=text] { display: inline-block; width: calc(50% - 7px); }
+      .af input[type=text]:first-child { margin-right: 14px; }
+      .af input[type=text],
+      .af input[type=email],
+      .af input[type=tel] { border: 1px solid #DDDDDD; transition: border 0.3s ease; }
+      .af input[type=text]:hover,
+      .af input[type=email]:hover,
+      .af input[type=tel]:hover { border: 1px solid #CCCCCC; }
+      .af input[type=text]:focus,
+      .af input[type=email]:focus,
+      .af input[type=tel]:focus { border: 1px solid #227EF7; }
+      .af input[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
+      .af input[type=submit]:hover { transform: translateY(-2px); }
+      .af input[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
+      .af p { font-size: 12px; text-align: center; margin-top: 15px; opacity: 0.6; letter-spacing: 0.1px; }
+      .af iframe { position: relative; width: 100%; border: 0 none; height: 100%; }
+      
+      #raw-list { position: relative; display: none; }
+      .grid { position: relative; text-align: center; padding: 0; font-size: 15px; display: none; margin: 0 auto; max-width: 540px; background: #fafafa; box-shadow: 0 1px 1px rgb(0 0 0 / 10%), 0 0 0 1px rgb(0 0 0 / 5%); border-radius: 6px; }
+      .af.show-grid .grid { display: block; }
+      .grid .loading-content { display: none; }
+      .grid .loading-content span.mdi { opacity: 0.4; }
+      .grid .loading-content p { font-size: 15px; margin: 0; opacity: 0.8; }
+      .grid .day-block { display: inline-block; width: 100px; padding: 10px 5px; vertical-align: top; }
+      .grid .day-block[data-available-slots='0'] { display: none; }
+      .grid .day-block .label { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 0 0 10px; margin: 0 0 10px; line-height: 1.5; }
+      .grid .day-block .label span { text-transform: uppercase; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
+      .grid .day-block .list { list-style: none; }
+      .grid .day-block .list li { padding: 5px 0; margin: 0 0 10px; font-size: 14px; border-radius: 5px; cursor: pointer; background: white; box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05); }
+      .grid .day-block .list span { display: none; }
+      .grid.loading .day-block { display: none; }
+      .grid.loading .loading-content { display: block; }
+
+      .af.show-grid .grid { display: block; }
+      .af.show-grid .form { display: none; }
+
+      @media screen and (max-width: 350px) {
+        .af p { max-width: 190px; margin: 15px auto 0; }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="af">
+      <div class="wrapper">
+        <div class="form">
+          <form id="form" method="POST">
+            <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off" autofocus="">
+            <input type="text" id="last-name" name="Last Name" placeholder="Last Name" required=""  autocomplete="off">
+            <input type="email" id="email" name="Email" placeholder="Email" pattern="^\S+@\S+$" required=""  autocomplete="off">
+            <input type="tel" id="phone" name="Phone" placeholder="Phone Number" pattern="^(\d{7}|\d{10})$" title="Ten digit number, no dashes or special characters." required=""  autocomplete="off">
+            <input type="text" id="campaign" name="Campaign" placeholder="free-hair-health-consultation" value="free-hair-health-consultation" style="display: none;">
+            <div>
+              <input type="submit" value="Sign Up">
+            </div>
+            <p>By clicking "Sign Up" you agree to our <a href="https://usealan.com/terms" target="_blank">Terms & Conditions</a>.</p>
+          </form>
+        </div>
+        <div class="grid loading">
+          <div class="loading-content">
+            <span class="mdi mdi-36px mdi-spin mdi-loading"></span>
+            <p>Loading available slots.</p>
+          </div>
+          <div id="in-one-day" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-two-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-three-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-four-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-five-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-six-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+          <div id="in-seven-days" class="day-block">
+            <div class="label"></div>
+            <ul class="list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ul id="raw-list"></ul>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <script>
+
+      // ALAN variables
+
+      var public_id = "36306012974cb15cc";
+      var internal_id = "3630";
+      
+      $(".af").attr("data-internal-id", internal_id);      
+      $(".af").attr("data-public-id",public_id);
+
+      var today = moment();
+      var inOneDay = moment().add(1, 'days');
+      var inTwoDays = moment().add(2, 'days');
+      var inThreeDays = moment().add(3, 'days');
+      var inFourDays = moment().add(4, 'days');
+      var inFiveDays = moment().add(5, 'days');
+      var inSixDays = moment().add(6, 'days');
+      var inSevenDays = moment().add(7, 'days');
+      
+      $("#in-one-day").attr("data-day", inOneDay.format("YYYY-MM-DD"));
+      $("#in-one-day .label").html(inOneDay.format("ddd") + "<br><span>" + inOneDay.format("MMM DD") + "</span>");
+      $("#in-two-days").attr("data-day", inTwoDays.format("YYYY-MM-DD"));
+      $("#in-two-days .label").html(inTwoDays.format("ddd") + "<br><span>" + inTwoDays.format("MMM DD") + "</span>");
+      $("#in-three-days").attr("data-day", inThreeDays.format("YYYY-MM-DD"));
+      $("#in-three-days .label").html(inThreeDays.format("ddd") + "<br><span>" + inThreeDays.format("MMM DD") + "</span>");
+      $("#in-four-days").attr("data-day", inFourDays.format("YYYY-MM-DD"));
+      $("#in-four-days .label").html(inFourDays.format("ddd") + "<br><span>" + inFourDays.format("MMM DD") + "</span>");
+      $("#in-five-days").attr("data-day", inFiveDays.format("YYYY-MM-DD"));
+      $("#in-five-days .label").html(inFiveDays.format("ddd") + "<br><span>" + inFiveDays.format("MMM DD") + "</span>");
+      $("#in-six-days").attr("data-day", inSixDays.format("YYYY-MM-DD"));
+      $("#in-six-days .label").html(inSixDays.format("ddd") + "<br><span>" + inSixDays.format("MMM DD") + "</span>");
+      $("#in-seven-days").attr("data-day", inSevenDays.format("YYYY-MM-DD"));
+      $("#in-seven-days .label").html(inSevenDays.format("ddd") + "<br><span>" + inSevenDays.format("MMM DD") + "</span>");
+      
+      var initialDate = today.format('YYYY-MM-DD');
+            
+      // Form submission
+            
+      $("#form").submit(function(e) {
+        e.preventDefault();
+        
+        var firstName = $("#first-name").val();
+        var lastName  = $("#last-name").val();
+        var email     = $("#email").val();
+        var phone     = $("#phone").val();
+        var campaign  = $("#campaign").val();
+        
+        $(".af").attr("data-first-name", firstName);
+        $(".af").attr("data-last-name", lastName);
+        $(".af").attr("data-email", email);
+        $(".af").attr("data-phone", phone);
+                
+        var createLeadSettings = {
+          "url": "https://smsportal.gymlaunchsecrets.com/webhooks/create_lead/" + public_id,
+          "method": "POST",
+          "data": JSON.stringify({
+            "first_name": firstName,
+            "last_name": lastName,
+            "phone": phone,
+            "email": email,
+            "utm_source": "Smart HTML Form"
+          }),
+        };
+        
+        // Create lead in ALAN
+        
+        $.ajax(createLeadSettings).done(function (response) {
+          if (response.status == "success") {
+            var lead_id = response.data.contact_id;
+            $(".af").attr("data-alan-lead-id", lead_id);
+            $(".af").addClass("show-grid");
+            // alert(firstName + " " + lastName + " (" + phone + ") successfully added.");
+          } else {
+            console.log(response.status);
+          }
+        });
+
+        // HairClub
+        
+        var lookupHairClubLead = {
+          "url": "https://leads-api-prod.hairclub.com/api/Authentication/email?Email=" + email,
+          "method": "GET",
+          "timeout": 0,
+          "headers": {
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NvcmVzZXJ2aWNlcy1hcGktcHJvZC5henVyZXdlYnNpdGVzLm5ldC8iLCJpYXQiOm51bGwsImV4cCI6bnVsbCwiYXVkIjoiaHR0cHM6Ly9jb3Jlc2VydmljZXMtYXBpLXByb2QuYXp1cmV3ZWJzaXRlcy5uZXQvIiwic3ViIjoiIn0.sFasu1GnH1rdp48mj-wjMuBlZCswQp-UBXXWvhxyUtA"
+          },
+        };
+
+        var createHairClubLead = {
+          "url": "https://leads-api-prod.hairclub.com/api/Authentication/signup",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NvcmVzZXJ2aWNlcy1hcGktcHJvZC5henVyZXdlYnNpdGVzLm5ldC8iLCJpYXQiOm51bGwsImV4cCI6bnVsbCwiYXVkIjoiaHR0cHM6Ly9jb3Jlc2VydmljZXMtYXBpLXByb2QuYXp1cmV3ZWJzaXRlcy5uZXQvIiwic3ViIjoiIn0.sFasu1GnH1rdp48mj-wjMuBlZCswQp-UBXXWvhxyUtA",
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify({
+            "zipCode": "33444",
+            "email": email,
+            "phone": phone,
+            "firstName": firstName,
+            "lastName": lastName
+          }),
+        };
+
+        var getHairClubAppointments = {
+          "url": "https://leads-api-prod.hairclub.com/api/Appointment?IdCenter=297&appointmentType=0&initialDate=" + initialDate,
+          "method": "GET",
+          "timeout": 0,
+          "headers": {
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NvcmVzZXJ2aWNlcy1hcGktcHJvZC5henVyZXdlYnNpdGVzLm5ldC8iLCJpYXQiOm51bGwsImV4cCI6bnVsbCwiYXVkIjoiaHR0cHM6Ly9jb3Jlc2VydmljZXMtYXBpLXByb2QuYXp1cmV3ZWJzaXRlcy5uZXQvIiwic3ViIjoiIn0.sFasu1GnH1rdp48mj-wjMuBlZCswQp-UBXXWvhxyUtA"
+          },
+        };
+
+        // Check if lead exists in HC
+        $.ajax(lookupHairClubLead).done(function (response) {
+          if (response.isSuccess == true) {
+            if ($.parseJSON(response.message).Id) {
+              var leadId = $.parseJSON(response.message).Id;
+              $(".af").attr("data-hairclub-lead-id", leadId);
+              console.log(response);
+              console.log("HairClub lead already exists: " + leadId);              
+            } else {
+              $.ajax(createHairClubLead).done(function (response) {
+                console.log(response);
+                var leadId = response.message;
+                $(".af").attr("data-hairclub-lead-id", leadId);
+                console.log("HairClub lead created: " + leadId);
+              });
+            }
+          } else {
+            // Create HairClub Lead if lead is not found.
+            $.ajax(createHairClubLead).done(function (response) {
+              console.log(response);
+              var leadId = response.message;
+              $(".af").attr("data-hairclub-lead-id", leadId);
+              console.log("HairClub lead created: " + leadId);
+            });
+          }
+        });
+
+        $.ajax(getHairClubAppointments).done(function (response) {
+          var data = response;
+          $.each(data, function (index) {
+            var slot = data[index];
+            if (slot.isAvailable == true) {
+              $("ul#raw-list").append("\
+                <li data-day='" + slot.appointmentDay + "' data-time='" + slot.initialTime + "'>\
+                  <span>" + slot.appointmentDay + slot.initialTime + "</span>" + moment(slot.initialTime, "HH:mm").format("LT") + "\
+                </li>\
+              ");
+            }
+          });
+          setTimeout(function(){
+            // Remove duplicates            
+            var uniqueLi = {};
+            $("ul#raw-list li").each(function () {
+              var thisVal = $(this).text();
+              if ( !(thisVal in uniqueLi) ) {
+                uniqueLi[thisVal] = "";
+              } else {
+                $(this).remove();
+              }
+            })
+            // Sort
+            var ul = document.getElementById("raw-list");
+            Array.from(ul.getElementsByTagName("li"))
+              .sort((a, b) => a.textContent.localeCompare(b.textContent))
+              .forEach(li => ul.appendChild(li));
+          }, 1000);
+          setTimeout(function(){
+            $("#raw-list li[data-day='" + inOneDay.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inOneDay.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inTwoDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inTwoDays.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inThreeDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inThreeDays.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inFourDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inFourDays.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inFiveDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inFiveDays.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inSixDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inSixDays.format("YYYY-MM-DD") + "'] .list");
+            });
+            $("#raw-list li[data-day='" + inSevenDays.format("YYYY-MM-DD") + "']").each(function(){
+              $(this).clone().appendTo(".grid .day-block[data-day='" + inSevenDays.format("YYYY-MM-DD") + "'] .list");
+            });
+          }, 2000);
+          setTimeout(function(){
+            $(".grid .day-block[data-day='" + inOneDay.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inOneDay.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inTwoDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inTwoDays.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inThreeDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inThreeDays.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inFourDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inFourDays.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inFiveDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inFiveDays.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inSixDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inSixDays.format("YYYY-MM-DD") + "'] .list li").length);
+            $(".grid .day-block[data-day='" + inSevenDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inSevenDays.format("YYYY-MM-DD") + "'] .list li").length);
+          }, 3000);
+          setTimeout(function(){
+            $(".grid").removeClass("loading");
+          }, 4000);
+        });
+      
+      }); // End form submission
+      
+    </script>
+  </body>
+</html>
