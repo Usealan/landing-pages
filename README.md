@@ -1,1 +1,1 @@
-# hc-landing-pages
+# ALAN Landing Pages
