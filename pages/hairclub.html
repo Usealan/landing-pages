@@ -42,7 +42,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
 <html lang="en">
   
   <head>
-    <title>{{ page.campaign_title }} | {{ page.business_name }}</title>
+    <title>{{ page.campaign_title }} – {{ page.business_name }}</title>
     <meta name="description" content="Promotion is limited to the first 15 people. Usually fills in less than 5 days. Claim your free spot now!">
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" />
@@ -50,6 +50,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
     <link rel="shortcut icon" href="https://usealan.com/assets/images/icon.ico" />
     <link rel="stylesheet" href="/assets/landing.css" />
     <meta name="theme-color" content="{{ page.business_primary_color }}">
+    <meta property="og:image" content="{{ page.hero_image }}">
   </head>
   
   <body class="lp fade-in" data-theme="1">
