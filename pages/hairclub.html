@@ -1,73 +1,95 @@
 ---
 permalink: /hairclub/
+
+template_options: ["1"]
+environment_options: ["production","test"]
+
+template: "1"
+environment: "production"
+
+end_user_public_id: "36306012974cb15cc"
+end_user_internal_id: "3630"
+
+business_name: "HairClub - Delray Beach"
+business_logo: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/62728dd3dccf8840e772fa9f_hairclub-logo.svg"
+business_primary_color: "#581024"
+
+campaign_title: "Free follicle & hair growth analysis"
+hero_headline: "Book your free follicle & hair growth analysis."
+hero_subtext: "Discover non-surgical, pain-free treatments that help those individuals experiencing early stage of hair loss regrow hair. Promotion limited to the first 15 people. Claim your free spot now!"
+hero_image: "https://ucarecdn.com/e19537a1-eaef-4a34-9be5-aa066881db40/-/quality/lighter/-/progressive/yes/-/max_icc_size/10/"
+
+features_title: "Stronger, more voluminous hair for a happier, more confident you."
+features_subtext: "Add strength and volume while reducing future hair loss with EXT Extreme Hair Therapy® Program. This comprehensive program combines HairClub’s® Salon Services with our advanced, formulated products to maximize your regrowth results."
+
+feature_one_title: "EXT Extreme Hair Therapy"
+feature_one_subtext: "Our regrowth solutions are non-surgical options that have shown to regrow hair when used as directed. Starts at just $199/mo."
+feature_one_icon: "mdi-bottle-tonic-plus"
+
+feature_two_title: "Hair Replacement"
+feature_two_subtext: "Our replacement solutions are perfect for those who need new hair in certain areas quickly and are ideal for those in advanced stages of hair thinning or loss. Starts at just $269/mo."
+feature_two_icon: "mdi-seat"
+
+feature_three_title: "Hair Restoration"
+feature_three_subtext: "Our restoration solutions are advanced surgical options that are best for people with moderate hair thinning or loss. Starts at just $1,200/mo."
+feature_three_icon: "mdi-face-man-shimmer"
+
+footer_text: "Results may vary. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc. HairClub®, HairClub For Men®, HairClub For Women®, HairClub For Men and Women®, Maxxam®, Trima®, HairClub For Kids®, EXT®, EXT Extreme Hair Therapy®, Strand-by-Strand®, Polyfuse®, Xtrands® , Xtrands+® and Strand Builder® are registered trademarks of HairClub For Men, Ltd., Inc."
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
+    <title>{{ page.campaign_title }} | {{ page.business_name }}</title>
+    <meta name="description" content="Promotion is limited to the first 15 people. Usually fills in less than 5 days. Claim your free spot now!">
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" />
-    <title>HairClub Landing Page</title>
     <link rel="apple-touch-icon" href="https://usealan.com/assets/images/icon.png">
     <link rel="shortcut icon" href="https://usealan.com/assets/images/icon.ico" />
-    <style>
-      @import url("https://rsms.me/inter/inter.css");
-      @import url("https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css");
-      * { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; outline: 0 none; shape-renderer: crispEdges;	-moz-osx-font-smoothing: grayscale; }
-      :root { --blue: #5F6EEE; --yellow: #EEDF5F; --green: #33B679; --orange: #EE935F; --red: #F4511E; }
-      .af { font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 17px; line-height: 1.8; position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 15px; }
-      .af a { color: blue; }
-      .af .wrapper { position: relative; margin: 0 auto; width: 100%; height: 100%; max-width: 1000px; }
-      .af .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0 auto; }
-      .af input { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
-      .af input[type=text] { display: inline-block; width: calc(50% - 7px); }
-      .af input[type=text]:first-child { margin-right: 14px; }
-      .af input[type=text],
-      .af input[type=email],
-      .af input[type=tel] { border: 1px solid #DDDDDD; transition: border 0.3s ease; }
-      .af input[type=text]:hover,
-      .af input[type=email]:hover,
-      .af input[type=tel]:hover { border: 1px solid #CCCCCC; }
-      .af input[type=text]:focus,
-      .af input[type=email]:focus,
-      .af input[type=tel]:focus { border: 1px solid #227EF7; }
-      .af input[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
-      .af input[type=submit]:hover { transform: translateY(-2px); }
-      .af input[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
-      .af p { font-size: 12px; text-align: center; margin-top: 15px; opacity: 0.6; letter-spacing: 0.1px; }
-      .af iframe { position: relative; width: 100%; border: 0 none; height: 100%; }
-      
-      #raw-list { position: relative; display: none; }
-      .grid { position: relative; text-align: center; padding: 0; font-size: 15px; display: none; margin: 0 auto; max-width: 540px; background: #fafafa; box-shadow: 0 1px 1px rgb(0 0 0 / 10%), 0 0 0 1px rgb(0 0 0 / 5%); border-radius: 6px; }
-      .af.show-grid .grid { display: block; }
-      .grid .loading-content { display: none; }
-      .grid .loading-content span.mdi { opacity: 0.4; }
-      .grid .loading-content p { font-size: 15px; margin: 0; opacity: 0.8; }
-      .grid .day-block { display: inline-block; width: 100px; padding: 10px 5px; vertical-align: top; }
-      .grid .day-block[data-available-slots='0'] { display: none; }
-      .grid .day-block .label { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 0 0 10px; margin: 0 0 10px; line-height: 1.5; }
-      .grid .day-block .label span { text-transform: uppercase; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
-      .grid .day-block .list { list-style: none; }
-      .grid .day-block .list li { padding: 5px 0; margin: 0 0 10px; font-size: 14px; border-radius: 5px; cursor: pointer; background: white; box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05); }
-      .grid .day-block .list span { display: none; }
-      .grid.loading .day-block { display: none; }
-      .grid.loading .loading-content { display: block; }
-
-      .af.show-grid .grid { display: block; }
-      .af.show-grid .form { display: none; }
-
-      @media screen and (max-width: 350px) {
-        .af p { max-width: 190px; margin: 15px auto 0; }
-      }
-
-    </style>
+    <link rel="stylesheet" href="/assets/landing.css" />
+    <meta name="theme-color" content="#FFFFFF">
   </head>
-  <body>
-    <div class="af">
-      <div class="wrapper">
-        <div class="form">
+  
+  <body class="lp fade-in" data-theme="1">
+    
+    <div class="hero">
+      <div class="image fade-in" style="background-image: url('{{ page.hero_image }}'); animation-delay: 1s;"></div>
+      <div class="container">
+        <div class="logo">
+          <a href="."><svg x="0px" y="0px" viewBox="0 0 559 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g class="hair-club-logo-svg hairclub-logo-white" fill="#581024">
+                          <g class="logo">
+              <path d="M56.5,13.5h18.1v81.9H56.5V62.8h-24v32.7H14.3V13.5h18.1v31.7h24V13.5z M161.1,95.5h18.4V13.5h-18.4V95.5z M239.2,62.9
+              	l15.9,32.6h-19.8L221.6,66h-10.9v29.5h-18.3V13.5h31.7c21.4,0,28.9,14.1,29,26.2C253.3,50.3,247.6,58.9,239.2,62.9z M224.2,29.9
+              	h-13.6v19.3h13.8c7.1,0,10.7-3.2,10.7-9.6C235.1,34.9,231.4,29.9,224.2,29.9z M294.5,28.9c4.4,0,8.2,1.5,10.2,4.1
+              	c1.9,2.3,2.8,4.5,3.1,7.2L308,42h18.4l-0.1-2.2c-0.5-5.1-2.4-12.3-8-18.1c-6-6.1-14.6-9.6-23.7-9.6c-9.2,0-17.4,3.2-23.5,9.4
+              	c-8.6,8.6-10.3,18.6-10.3,33.1c0,14.4,1.7,24.5,10.3,33.1c6.1,6.1,14.2,9.3,23.5,9.3c9,0,17.6-3.6,23.7-9.8c4.4-4.5,7.3-11,8-18.2
+              	l0.1-2.2H308l-0.2,1.8c-0.3,2.9-1.3,5.3-3.1,7.5c-2.1,2.6-5.9,4.2-10.2,4.2c-4,0-7.8-1.7-10.6-4.6c-4.8-5-4.8-14.3-4.8-21.1
+              	s0-16,4.9-21.1C286.7,30.6,290.5,28.9,294.5,28.9z M354.1,13.5h-18.2v81.9h49.6V78.1h-31.5V13.5z M435.8,63.3
+              	c0,11.6-3.5,16.7-12.4,16.7c-8.9,0-12.4-5.2-12.4-16.7V13.5h-18.1v50c0,21.5,10.1,33.3,30.5,33.3c20.5,0,30.5-11.8,30.5-33.3v-50
+              	h-18.1V63.3z M525.7,70.8c0,8.1-3,14.7-8.7,19.1c-6.2,4.7-13.3,5.7-22,5.7h-30v-82h30c8.2,0,14.2,1.5,19.1,4.6
+              	c6.1,4,9.9,11.1,9.9,18.6c0,5-2,12.2-7.6,16.5C522.3,57.1,525.7,63.7,525.7,70.8z M483.1,78.8h12.5c3.5,0,11.8-0.8,11.8-8.3
+              	c0-6.3-3.7-9.3-11.3-9.3h-13V78.8z M495.9,45.3c6.7,0,9.8-2.4,9.8-7.7c0-5.3-3.3-7.9-10.1-7.9h-12.5v15.6H495.9z M128.7,13.5
+              	l25.5,81.9h-19.1l-4.5-15h-26l-4.6,15H81.6l26-81.9H128.7z M117.9,37.8l-8.1,26.1h15.9L117.9,37.8z M538.9,30c-5,0-8.8-3.9-8.8-8.9
+              	s3.7-8.9,8.8-8.9s8.8,3.9,8.8,8.9S543.9,30,538.9,30z M538.9,13.7c-4.3,0-7.1,3.1-7.1,7.4s2.8,7.4,7.1,7.4c4.3,0,7.1-3.1,7.1-7.4
+              	S543.2,13.7,538.9,13.7z M540.9,25.6l-1.6-3.4h-1.8v3.4h-1.6v-9.3h3.4c1.8,0,3.3,1,3.3,2.9c0,1.2-0.5,2.2-1.7,2.7l1.7,3.7H540.9z
+              	 M539.3,17.8h-1.8v2.9h1.8c1,0,1.6-0.4,1.6-1.5C540.9,18.2,540.2,17.8,539.3,17.8z"></path>
+                          </g>
+                      </g>
+                  </g>
+              </svg></a>
+        </div>
+        <div class="hero-text">
+          <h1 class="fade-in" style="animation-delay: 1.5s;">{{ page.hero_headline }}</h1>
+          <p class="fade-in" style="animation-delay: 2s;">{{ page.hero_subtext }}</p>
+        </div>
+        <div class="form fade-in" style="animation-delay: 2.5s;">
           <form id="form" method="POST">
-            <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off" autofocus="">
+            <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off" class="fade-in">
             <input type="text" id="last-name" name="Last Name" placeholder="Last Name" required=""  autocomplete="off">
             <input type="email" id="email" name="Email" placeholder="Email" pattern="^\S+@\S+$" required=""  autocomplete="off">
             <input type="tel" id="phone" name="Phone" placeholder="Phone Number" pattern="^(\d{7}|\d{10})$" title="Ten digit number, no dashes or special characters." required=""  autocomplete="off">
@@ -78,45 +100,98 @@ permalink: /hairclub/
             <p>By clicking "Sign Up" you agree to our <a href="https://usealan.com/terms" target="_blank">Terms & Conditions</a>.</p>
           </form>
         </div>
-        <div class="grid loading">
-          <div class="loading-content">
-            <span class="mdi mdi-36px mdi-spin mdi-loading"></span>
-            <p>Loading available slots.</p>
-          </div>
-          <div id="in-one-day" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-two-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-three-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-four-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-five-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-six-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
-          <div id="in-seven-days" class="day-block">
-            <div class="label"></div>
-            <ul class="list"></ul>
-          </div>
+      </div>
+    </div>
+
+    <div class="grid loading">
+      <h3>Thanks, <strong></strong>!</h3>
+      <h4>Please select a date and time for your appointment at <strong>{{ page.business_name }}</strong>:</h4>
+      <div class="grid-container">
+        <div class="loading-content">
+          <span class="mdi mdi-36px mdi-spin mdi-loading"></span>
+          <p>Searching for available slots.</p>
+        </div>
+        
+        <div id="in-one-day" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-two-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-three-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-four-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-five-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-six-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
+        </div>
+        <div id="in-seven-days" class="day-block">
+          <div class="label"></div>
+          <ul class="list"></ul>
         </div>
       </div>
     </div>
     
     <ul id="raw-list"></ul>
     
+    <div class="features fade-in" style="animation-delay: 3s;">
+      <div class="container">
+        <h2>{{ page.features_title }}</h2>
+        {% if page.features_subtext %}
+        <p>{{ page.features_subtext }}</p>
+        {% endif %}
+        <ul>
+          {% if page.feature_one_title %}
+          <li>
+            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_one_icon }}"></span></div>
+            <h3>{{ page.feature_one_title }}</h3>
+            <p>{{ page.feature_one_subtext }}</p>
+          </li>
+          {% endif %}
+          {% if page.feature_two_title %}
+          <li>
+            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_two_icon }}"></span></div>
+            <h3>{{ page.feature_two_title }}</h3>
+            <p>{{ page.feature_two_subtext }}</p>
+          </li>
+          {% endif %}
+          {% if page.feature_three_title %}
+          <li>
+            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_three_icon }}"></span></div>
+            <h3>{{ page.feature_three_title }}</h3>
+            <p>{{ page.feature_three_subtext }}</p>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer fade-in" style="animation-delay: 3s;">
+      <div class="container">
+        {% if page.footer_text %}
+        <p>{{ page.footer_text }}</p>
+        {% endif %}
+        <ul class="links">                            
+          <li><a title="Privacy Policy" href="https://usealan.com/privacy/" target="_blank">Privacy Policy</a></li>
+          <li><a title="Terms of Use" href="https://usealan.com/terms/" target="_blank">Terms of Use</a></li>
+          <br><br>
+          <li><strong style="font-weight: 500;">© {{ 'now' | date: "%Y" }} {{ page.business_name }}</strong></li>          
+          <li>Powered by <a href="https://usealan.com" target="_blank" style="text-decoration: underline;">ALAN</a></li>          
+        </ul>
+      </div>
+    </div>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
@@ -124,11 +199,11 @@ permalink: /hairclub/
 
       // ALAN variables
 
-      var public_id = "36306012974cb15cc";
-      var internal_id = "3630";
+      var public_id = "{{ page.end_user_public_id }}";
+      var internal_id = "{{ page.end_user_internal_id }}";
       
-      $(".af").attr("data-internal-id", internal_id);      
-      $(".af").attr("data-public-id",public_id);
+      $(".lp").attr("data-internal-id", internal_id);      
+      $(".lp").attr("data-public-id",public_id);
 
       var today = moment();
       var inOneDay = moment().add(1, 'days');
@@ -167,10 +242,10 @@ permalink: /hairclub/
         var phone     = $("#phone").val();
         var campaign  = $("#campaign").val();
         
-        $(".af").attr("data-first-name", firstName);
-        $(".af").attr("data-last-name", lastName);
-        $(".af").attr("data-email", email);
-        $(".af").attr("data-phone", phone);
+        $(".lp").attr("data-first-name", firstName);
+        $(".lp").attr("data-last-name", lastName);
+        $(".lp").attr("data-email", email);
+        $(".lp").attr("data-phone", phone);
                 
         var createLeadSettings = {
           "url": "https://smsportal.gymlaunchsecrets.com/webhooks/create_lead/" + public_id,
@@ -187,10 +262,11 @@ permalink: /hairclub/
         // Create lead in ALAN
         
         $.ajax(createLeadSettings).done(function (response) {
+          console.log(response);
           if (response.status == "success") {
             var lead_id = response.data.contact_id;
-            $(".af").attr("data-alan-lead-id", lead_id);
-            $(".af").addClass("show-grid");
+            $(".lp").attr("data-alan-lead-id", lead_id);
+            $(".lp").addClass("show-grid");
             // alert(firstName + " " + lastName + " (" + phone + ") successfully added.");
           } else {
             console.log(response.status);
@@ -239,14 +315,14 @@ permalink: /hairclub/
           if (response.isSuccess == true) {
             if ($.parseJSON(response.message).Id) {
               var leadId = $.parseJSON(response.message).Id;
-              $(".af").attr("data-hairclub-lead-id", leadId);
+              $(".lp").attr("data-hairclub-lead-id", leadId);
               console.log(response);
               console.log("HairClub lead already exists: " + leadId);              
             } else {
               $.ajax(createHairClubLead).done(function (response) {
                 console.log(response);
                 var leadId = response.message;
-                $(".af").attr("data-hairclub-lead-id", leadId);
+                $(".lp").attr("data-hairclub-lead-id", leadId);
                 console.log("HairClub lead created: " + leadId);
               });
             }
@@ -255,7 +331,7 @@ permalink: /hairclub/
             $.ajax(createHairClubLead).done(function (response) {
               console.log(response);
               var leadId = response.message;
-              $(".af").attr("data-hairclub-lead-id", leadId);
+              $(".lp").attr("data-hairclub-lead-id", leadId);
               console.log("HairClub lead created: " + leadId);
             });
           }
@@ -324,11 +400,13 @@ permalink: /hairclub/
           }, 3000);
           setTimeout(function(){
             $(".grid").removeClass("loading");
+            $(".grid h3 strong").text($("lp").attr("data-first-name"));
           }, 4000);
         });
       
       }); // End form submission
       
     </script>
+
   </body>
 </html>
