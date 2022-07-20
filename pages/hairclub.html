@@ -109,7 +109,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
       <div class="grid-container">
         <div class="loading-content">
           <span class="mdi mdi-36px mdi-spin mdi-loading"></span>
-          <p>Searching for available slots.</p>
+          <p>Searching for available slots at <strong>{{ page.business_name}}</strong>.</p>
         </div>
         
         <div id="in-one-day" class="day-block">
@@ -177,7 +177,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
       </div>
     </div>
     
-    <div class="footer fade-in" style="animation-delay: 3s;">
+    <div class="footer fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 3s;">
       <div class="container">
         {% if page.footer_text %}
         <p>{{ page.footer_text }}</p>
@@ -246,6 +246,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
         $(".lp").attr("data-last-name", lastName);
         $(".lp").attr("data-email", email);
         $(".lp").attr("data-phone", phone);
+        $(".grid h3 strong").text(firstName);
                 
         var createLeadSettings = {
           "url": "https://smsportal.gymlaunchsecrets.com/webhooks/create_lead/" + public_id,
@@ -400,7 +401,6 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
           }, 3000);
           setTimeout(function(){
             $(".grid").removeClass("loading");
-            $(".grid h3 strong").text($("lp").attr("data-first-name"));
           }, 4000);
         });
       
