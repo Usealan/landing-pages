@@ -24,15 +24,15 @@ features_subtext: "Add strength and volume while reducing future hair loss with 
 
 feature_one_title: "EXT Extreme Hair Therapy"
 feature_one_subtext: "Our regrowth solutions are non-surgical options that have shown to regrow hair when used as directed. Starts at just $199/mo."
-feature_one_icon: "mdi-bottle-tonic-plus"
+feature_one_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/62619753e29033f9a11ac8a3_8-20191118-DSC_1446.jpg"
 
 feature_two_title: "Hair Replacement"
 feature_two_subtext: "Our replacement solutions are perfect for those who need new hair in certain areas quickly and are ideal for those in advanced stages of hair thinning or loss. Starts at just $269/mo."
-feature_two_icon: "mdi-seat"
+feature_two_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/6261975275509d1f71898f20_Xtrands%2B%C2%AE_Hero%20Shot.jpg"
 
 feature_three_title: "Hair Restoration"
 feature_three_subtext: "Our restoration solutions are advanced surgical options that are best for people with moderate hair thinning or loss. Starts at just $1,200/mo."
-feature_three_icon: "mdi-face-man-shimmer"
+feature_three_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/6267f3fee7b967d3767911db_Restoration-Big.jpg"
 
 footer_text: "Results may vary. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc. HairClub®, HairClub For Men®, HairClub For Women®, HairClub For Men and Women®, Maxxam®, Trima®, HairClub For Kids®, EXT®, EXT Extreme Hair Therapy®, Strand-by-Strand®, Polyfuse®, Xtrands® , Xtrands+® and Strand Builder® are registered trademarks of HairClub For Men, Ltd., Inc."
 
@@ -49,7 +49,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
     <link rel="apple-touch-icon" href="https://usealan.com/assets/images/icon.png">
     <link rel="shortcut icon" href="https://usealan.com/assets/images/icon.ico" />
     <link rel="stylesheet" href="/assets/landing.css" />
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="{{ page.business_primary_color }}">
   </head>
   
   <body class="lp fade-in" data-theme="1">
@@ -154,28 +154,36 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
         <ul>
           {% if page.feature_one_title %}
           <li>
-            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_one_icon }}"></span></div>
-            <h3>{{ page.feature_one_title }}</h3>
-            <p>{{ page.feature_one_subtext }}</p>
+            <div class="image" style="background-image: url('{{ page.feature_one_image }}')"></div>
+            <div class="feature-block-wrapper">
+              <h3>{{ page.feature_one_title }}</h3>
+              <p>{{ page.feature_one_subtext }}</p>
+            </div>
           </li>
           {% endif %}
           {% if page.feature_two_title %}
           <li>
-            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_two_icon }}"></span></div>
-            <h3>{{ page.feature_two_title }}</h3>
-            <p>{{ page.feature_two_subtext }}</p>
+            <div class="image" style="background-image: url('{{ page.feature_two_image }}')"></div>
+            <div class="feature-block-wrapper">
+              <h3>{{ page.feature_two_title }}</h3>
+              <p>{{ page.feature_two_subtext }}</p>
+            </div>
           </li>
           {% endif %}
           {% if page.feature_three_title %}
           <li>
-            <div class="icon" {% if page.business_primary_color %}style="background: {{ page.business_primary_color }}"{% endif %}><span class="mdi {{ page.feature_three_icon }}"></span></div>
-            <h3>{{ page.feature_three_title }}</h3>
-            <p>{{ page.feature_three_subtext }}</p>
+            <div class="image" style="background-image: url('{{ page.feature_three_image }}')"></div>
+            <div class="feature-block-wrapper">
+              <h3>{{ page.feature_three_title }}</h3>
+              <p>{{ page.feature_three_subtext }}</p>
+            </div>
           </li>
           {% endif %}
         </ul>
       </div>
     </div>
+
+
     
     <div class="footer fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 3s;">
       <div class="container">
