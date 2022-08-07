@@ -1,4 +1,4 @@
-console.log("Current HairClub LP: https://getstarted.hairclub.com/ge-men/")
+console.log("👨 https://getstarted.hairclub.com/ge-men/" + "\n" + "👩 https://getstarted.hairclub.com/ge-women/")
 
 $(".lp").attr("data-internal-id", internal_id);      
 $(".lp").attr("data-public-id",public_id);
