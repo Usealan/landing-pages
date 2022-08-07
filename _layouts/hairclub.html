@@ -1,43 +1,3 @@
----
-permalink: /hairclub/
-
-template_options: ["1"]
-environment_options: ["production","test"]
-
-template: "1"
-environment: "production"
-
-end_user_public_id: "36306012974cb15cc"
-end_user_internal_id: "3630"
-
-business_name: "HairClub - Delray Beach"
-business_logo: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/62728dd3dccf8840e772fa9f_hairclub-logo.svg"
-business_primary_color: "#581024"
-
-campaign_title: "Free follicle & hair growth analysis"
-hero_headline: "Book your free follicle & hair growth analysis."
-hero_subtext: "Discover non-surgical, pain-free treatments that help those individuals experiencing early stage of hair loss regrow hair. Promotion limited to the first 15 people. Claim your free spot now!"
-hero_image: "https://i.imgur.com/Zg0GdnC.jpg"
-
-features_title: "Stronger, more voluminous hair for a happier, more confident you."
-features_subtext: "Add strength and volume while reducing future hair loss with EXT Extreme Hair Therapy® Program. This comprehensive program combines HairClub’s® Salon Services with our advanced, formulated products to maximize your regrowth results."
-
-feature_one_title: "EXT Extreme Hair Therapy"
-feature_one_subtext: "Our regrowth solutions are non-surgical options that have shown to regrow hair when used as directed. Starts at just $199/mo."
-feature_one_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/62619753e29033f9a11ac8a3_8-20191118-DSC_1446.jpg"
-
-feature_two_title: "Hair Replacement"
-feature_two_subtext: "Our replacement solutions are perfect for those who need new hair in certain areas quickly and are ideal for those in advanced stages of hair thinning or loss. Starts at just $269/mo."
-feature_two_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/6261975275509d1f71898f20_Xtrands%2B%C2%AE_Hero%20Shot.jpg"
-
-feature_three_title: "Hair Restoration"
-feature_three_subtext: "Our restoration solutions are advanced surgical options that are best for people with moderate hair thinning or loss. Starts at just $1,200/mo."
-feature_three_image: "https://assets-global.website-files.com/622bb1bf4ab73a302e3ed230/6267f3fee7b967d3767911db_Restoration-Big.jpg"
-
-footer_text: "Results may vary. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc. HairClub®, HairClub For Men®, HairClub For Women®, HairClub For Men and Women®, Maxxam®, Trima®, HairClub For Kids®, EXT®, EXT Extreme Hair Therapy®, Strand-by-Strand®, Polyfuse®, Xtrands® , Xtrands+® and Strand Builder® are registered trademarks of HairClub For Men, Ltd., Inc."
-
----
-
 <!DOCTYPE html>
 <html lang="en">
   
@@ -153,6 +113,7 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
     
     <ul id="raw-list"></ul>
     
+    {% if page.features_title %}
     <div class="features fade-in" style="animation-delay: 2.5s;">
       <div class="container">
         <h2>{{ page.features_title }}</h2>
@@ -190,34 +151,42 @@ footer_text: "Results may vary. This site is not a part of the Facebook website 
         </ul>
       </div>
     </div>
+    {% endif %}
 
+    {% if page.about_title %}
     <div class="about fade-in" style="animation-delay: 2.5s;">
       <div class="container">
         <div class="content">
+          {% if page.about_comparison == true %}
           <div class="image with-comparison">
-            <!--<img src="https://ucarecdn.com/e19537a1-eaef-4a34-9be5-aa066881db40/-/quality/lighter/-/progressive/yes/-/max_icc_size/10/">-->
             <div class="comparison">
-              <div class="img background-img" style="background-image: url('https://getstarted.hairclub.com/regrow-replace-restore/fa6afacf-hc-before.jpg')"></div>
-              <div class="img foreground-img" style="background-image: url('https://getstarted.hairclub.com/regrow-replace-restore/e3e19bb9-hc-after.jpg')"></div>
+              <div class="img background-img" style="background-image: url('{{ page.about_comparison_before_image }}')"></div>
+              <div class="img foreground-img" style="background-image: url('{{ page.about_comparison_after_image }}')"></div>
               <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
               <div class="slider-button"></div>
             </div>
           </div>
-          <h2>For us, it's personal.</h2>
-          <p>Out of all our accomplishments over the last four decades, there’s one thing we’re most proud of: showing our members just how much we care about them. Many of our cosmetologists and hair loss experts started where you are—as members themselves.</p>
-          <p>So, we truly understand exactly what you’re going through, and we’re here to help you every step of the way.</p>
-          <p>One size rarely fits all, that's why our bespoke treatment plans are tailored to your specific hair needs, regardless of age, gender, ethnicity, or hair type.</p>
+          {% else %}
+          <div class="image">
+            <img src="{{ page.about_image }}">
+          </div>
+          {% endif %}
+          <h2>{{ page.about_title }}</h2>
+          {{ page.about_body }}
         </div>
       </div>
     </div>
+    {% endif %}
     
+    {% if page.footer_cta_title %}
     <div class="footer-cta fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 2.5s;">
       <div class="container">
-        <h2>Book your free follicle and hair growth analysis.</h2>
-        <p>Promotion limited to the first 15 people. Claim your free spot now!</p>
+        <h2>{{ page.footer_cta_title }}</h2>
+        <p>{{ page.footer_cta_subtitle }}</p>
         <a href="." class="footer-cta-button" style="color: {{ page.business_primary_color }}">Schedule Now</a>
       </div>
     </div>
+    {% endif %}
     
     <div class="footer fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 2.5s;">
       <div class="container">
