@@ -202,7 +202,15 @@ $("#form").submit(function(e) {
         var hairClubLeadId = $("body").attr("data-hairclub-lead-id");
         var selectedDatetime = $(this).attr("data-day") + " " + $(this).attr("data-time");
         var selectedDatetimeText = moment(selectedDatetime).format("MMMM DD, YYYY") + " at " + moment(selectedDatetime).format("LT");
-        if (confirm("Please confirm the following appointment time: " + selectedDatetimeText)) {
+        $(".modal .summary .value.name").text($("body").attr("data-first-name") + " " + $("body").attr("data-last-name"));
+        $(".modal .summary .value.date-time").text(selectedDatetimeText);
+        $(".lp").addClass("show-modal");
+        $(".modal button.confirm").focus();
+        $(".modal .close").click(function() {
+          $(".lp").removeClass("show-modal");
+        });
+        $(".modal button.confirm").click(function() {
+          $(".ac").removeClass("show-modal");
           $("body").attr("data-selected-datetime", selectedDatetime);
           var createHairClubAppointment = {
             "url": "https://leads-api-prod.hairclub.com/api/Appointment",
@@ -222,14 +230,23 @@ $("#form").submit(function(e) {
           $.ajax(createHairClubAppointment).done(function (response) {
             console.log(response);
             if (response.isSuccess == true) {
-              alert("Appointment schedule successfully! We'll see on " + selectedDatetimeText + ".");
-              location.reload();
+              $(".confirmation").html("\
+                <span class='mdi mdi-check-circle' style='display: block'></span>\
+                <h3>Appointment confirmed!</h3>\
+                <p>Thank you, you're all set! We look forward to seeing you on " + selectedDatetimeText + ".</p>\
+              ");
+              $(".lp").removeClass("show-modal");
+              $(".lp").removeClass("show-grid");
+              $(".lp").addClass("show-confirmation");
+              console.log("Appointment schedule successfully! We'll see on " + selectedDatetimeText + ".");
             } else {
               alert("We encountered an error scheduling your appointment. Please try again.")
             }
           });
-        }
+        });
       });
+      
+
       
     }, 3000);
     setTimeout(function(){
