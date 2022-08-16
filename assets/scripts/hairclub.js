@@ -107,7 +107,7 @@ $("#form").submit(function(e) {
       "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NvcmVzZXJ2aWNlcy1hcGktcHJvZC5henVyZXdlYnNpdGVzLm5ldC8iLCJpYXQiOm51bGwsImV4cCI6bnVsbCwiYXVkIjoiaHR0cHM6Ly9jb3Jlc2VydmljZXMtYXBpLXByb2QuYXp1cmV3ZWJzaXRlcy5uZXQvIiwic3ViIjoiIn0.sFasu1GnH1rdp48mj-wjMuBlZCswQp-UBXXWvhxyUtA"
     },
   };
-
+    
   // Check if lead exists in HC
   $.ajax(lookupHairClubLead).done(function (response) {
     if (response.isSuccess == true) {
@@ -195,6 +195,42 @@ $("#form").submit(function(e) {
       $(".grid .day-block[data-day='" + inFiveDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inFiveDays.format("YYYY-MM-DD") + "'] .list li").length);
       $(".grid .day-block[data-day='" + inSixDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inSixDays.format("YYYY-MM-DD") + "'] .list li").length);
       $(".grid .day-block[data-day='" + inSevenDays.format("YYYY-MM-DD") + "']").attr("data-available-slots", $(".grid .day-block[data-day='" + inSevenDays.format("YYYY-MM-DD") + "'] .list li").length);
+      
+      // Select appointment date time
+      
+      $(".lp .grid .day-block .list li").click(function() {
+        var hairClubLeadId = $("body").attr("data-hairclub-lead-id");
+        var selectedDatetime = $(this).attr("data-day") + " " + $(this).attr("data-time");
+        var selectedDatetimeText = moment(selectedDatetime).format("MMMM DD, YYYY") + " at " + moment(selectedDatetime).format("LT");
+        if (confirm("Please confirm the following appointment time: " + selectedDatetimeText)) {
+          $("body").attr("data-selected-datetime", selectedDatetime);
+          var createHairClubAppointment = {
+            "url": "https://leads-api-prod.hairclub.com/api/Appointment",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+              "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2NvcmVzZXJ2aWNlcy1hcGktcHJvZC5henVyZXdlYnNpdGVzLm5ldC8iLCJpYXQiOm51bGwsImV4cCI6bnVsbCwiYXVkIjoiaHR0cHM6Ly9jb3Jlc2VydmljZXMtYXBpLXByb2QuYXp1cmV3ZWJzaXRlcy5uZXQvIiwic3ViIjoiIn0.sFasu1GnH1rdp48mj-wjMuBlZCswQp-UBXXWvhxyUtA",
+              "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+              "startDate": selectedDatetime,
+              "leadId": hairClubLeadId,
+              "appointmentType": 0,
+              "centerId": "297"
+            }),
+          };
+          $.ajax(createHairClubAppointment).done(function (response) {
+            console.log(response);
+            if (response.isSuccess == true) {
+              alert("Appointment schedule successfully! We'll see on " + selectedDatetimeText + ".");
+              location.reload();
+            } else {
+              alert("We encountered an error scheduling your appointment. Please try again.")
+            }
+          });
+        }
+      });
+      
     }, 3000);
     setTimeout(function(){
       $(".grid").removeClass("loading");
