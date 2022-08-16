@@ -46,7 +46,7 @@ a { color: var(--color-link); }
 .lp .hero .image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 10; }
 .lp .hero .image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 .lp .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0; }
-.lp input { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
+.lp input, .lp button { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
 .lp input[type=text] { display: inline-block; width: calc(50% - 7px); }
 .lp input[type=text]:first-child { margin-right: 14px; }
 .lp input[type=text],
@@ -58,9 +58,9 @@ a { color: var(--color-link); }
 .lp input[type=text]:focus,
 .lp input[type=email]:focus,
 .lp input[type=tel]:focus { border: 1px solid #227EF7; }
-.lp input[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
-.lp input[type=submit]:hover { transform: translateY(-2px); }
-.lp input[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
+.lp button[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
+.lp button[type=submit]:hover { transform: translateY(-2px); }
+.lp button[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
 .lp .hero .form p { font-size: 12px !important; text-align: center; margin-top: 15px !important; opacity: 0.6; letter-spacing: 0.1px; }
 .lp iframe { position: relative; width: 100%; border: 0 none; height: 100%; }
 

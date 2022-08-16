@@ -34,6 +34,8 @@ var initialDate = today.format('YYYY-MM-DD');
 $("#form").submit(function(e) {
   e.preventDefault();
   
+  $("button[type=submit]").html("<span class='mdi mdi-loading mdi-spin' style='margin-right: 10px'></span>Sign Up");
+  
   var firstName = $("#first-name").val();
   var lastName  = $("#last-name").val();
   var email     = $("#email").val();
@@ -201,17 +203,17 @@ $("#form").submit(function(e) {
       $(".lp .grid .day-block .list li").click(function() {
         var hairClubLeadId = $("body").attr("data-hairclub-lead-id");
         var selectedDatetime = $(this).attr("data-day") + " " + $(this).attr("data-time");
+        $("body").attr("data-selected-datetime", selectedDatetime);
         var selectedDatetimeText = moment(selectedDatetime).format("MMMM DD, YYYY") + " at " + moment(selectedDatetime).format("LT");
         $(".modal .summary .value.name").text($("body").attr("data-first-name") + " " + $("body").attr("data-last-name"));
         $(".modal .summary .value.date-time").text(selectedDatetimeText);
         $(".lp").addClass("show-modal");
-        $(".modal button.confirm").focus();
         $(".modal .close").click(function() {
           $(".lp").removeClass("show-modal");
         });
         $(".modal button.confirm").click(function() {
+          $(this).prepend("<span class='mdi mdi-loading mdi-spin' style='margin-right: 10px'></span>");
           $(".ac").removeClass("show-modal");
-          $("body").attr("data-selected-datetime", selectedDatetime);
           var createHairClubAppointment = {
             "url": "https://leads-api-prod.hairclub.com/api/Appointment",
             "method": "POST",
