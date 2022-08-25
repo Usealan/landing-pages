@@ -3,6 +3,8 @@ console.log("👨 https://getstarted.hairclub.com/ge-men/" + "\n" + "👩 https:
 $(".lp").attr("data-internal-id", internal_id);      
 $(".lp").attr("data-public-id",public_id);
 
+$(".lp .header .logo a").attr("href",window.location.href);
+
 var today = moment();
 var inOneDay = moment().add(1, 'days');
 var inTwoDays = moment().add(2, 'days');
