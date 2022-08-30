@@ -1,5 +1,25 @@
 console.log("👨 https://getstarted.hairclub.com/ge-men/" + "\n" + "👩 https://getstarted.hairclub.com/ge-women/")
 
+// Set variables from URL parameters
+if ( getUrlParameter("pub") ) {
+  var sourceCode = getUrlParameter("pub");
+} else {
+  var sourceCode = "";
+};
+if ( getUrlParameter("utm_id") ) {
+  var campaignId = getUrlParameter("utm_id");
+} else {
+  var campaignId = "";
+};
+if ( getUrlParameter("referralCode") ) {
+  var referralCode = getUrlParameter("referralCode");
+} else {
+  var referralCode = "";
+};
+console.log("Source Code: " + sourceCode);
+console.log("Campaign ID: " + campaignId);
+console.log("Referral Code: " + referralCode);
+
 $(".lp").attr("data-internal-id", internal_id);      
 $(".lp").attr("data-public-id",public_id);
 
@@ -58,7 +78,7 @@ $("#form").submit(function(e) {
       "last_name": lastName,
       "phone": phone,
       "email": email,
-      "utm_source": "Smart HTML Form"
+      "utm_source": "HairClub Landing Pages"
     }),
   };
   
@@ -69,7 +89,6 @@ $("#form").submit(function(e) {
       var lead_id = response.data.contact_id;
       $(".lp").attr("data-alan-lead-id", lead_id);
       $(".lp").addClass("show-grid");
-      // alert(firstName + " " + lastName + " (" + phone + ") successfully added.");
     } else {
       console.log(response.status);
     }
@@ -99,7 +118,8 @@ $("#form").submit(function(e) {
       "email": email,
       "phone": phone,
       "firstName": firstName,
-      "lastName": lastName
+      "lastName": lastName,
+      "sourceCode": sourceCode
     }),
   };
 
