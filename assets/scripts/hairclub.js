@@ -4,7 +4,7 @@ console.log("👨 https://getstarted.hairclub.com/ge-men/" + "\n" + "👩 https:
 if ( getUrlParameter("pub") ) {
   var sourceCode = getUrlParameter("pub");
 } else {
-  var sourceCode = "";
+  var sourceCode = "DGTXTORGFMT00016743";
 };
 if ( getUrlParameter("utm_id") ) {
   var campaignId = getUrlParameter("utm_id");
