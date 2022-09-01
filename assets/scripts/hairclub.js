@@ -21,7 +21,8 @@ console.log("Campaign ID: " + campaignId);
 console.log("Referral Code: " + referralCode);
 
 $(".lp").attr("data-internal-id", internal_id);      
-$(".lp").attr("data-public-id",public_id);
+$(".lp").attr("data-public-id", public_id);
+$(".lp").attr("data-hairclub-center-id", hairclub_center_id);
 
 $(".lp .header .logo a").attr("href",window.location.href);
 
@@ -114,7 +115,7 @@ $("#form").submit(function(e) {
       "Content-Type": "application/json"
     },
     "data": JSON.stringify({
-      "zipCode": "33444",
+      "zipCode": hairclub_zip_code,
       "email": email,
       "phone": phone,
       "firstName": firstName,
@@ -124,7 +125,7 @@ $("#form").submit(function(e) {
   };
 
   var getHairClubAppointments = {
-    "url": "https://leads-api-prod.hairclub.com/api/Appointment?IdCenter=297&appointmentType=0&initialDate=" + initialDate,
+    "url": "https://leads-api-prod.hairclub.com/api/Appointment?IdCenter=" + hairclub_center_id + "&appointmentType=0&initialDate=" + initialDate,
     "method": "GET",
     "timeout": 0,
     "headers": {
@@ -248,7 +249,7 @@ $("#form").submit(function(e) {
               "startDate": selectedDatetime,
               "leadId": hairClubLeadId,
               "appointmentType": 0,
-              "centerId": "297"
+              "centerId": hairclub_center_id
             }),
           };
           $.ajax(createHairClubAppointment).done(function (response) {
