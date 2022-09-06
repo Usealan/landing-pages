@@ -271,7 +271,6 @@ $("#form").submit(function(e) {
         });
       });
       
-
       
     }, 3000);
     setTimeout(function(){
