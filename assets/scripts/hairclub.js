@@ -1,5 +1,10 @@
 console.log("👨 https://getstarted.hairclub.com/ge-men/" + "\n" + "👩 https://getstarted.hairclub.com/ge-women/")
 
+if (window.location.host !== "page.usealan.com") {
+  var originalTitle = document.title;
+  document.title = "🚧 " + originalTitle;
+}
+
 // Set variables from URL parameters
 if ( getUrlParameter("pub") ) {
   var sourceCode = getUrlParameter("pub");
