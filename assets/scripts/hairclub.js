@@ -301,7 +301,7 @@ $(".footer-cta-button").click(function() {
 
 // Make it easy to identify dev vs. prod
 
-if (window.location.host !== "page.usealan.com") {
+if (window.location.host !== "pages.usealan.com") {
   var originalTitle = document.title;
   document.title = "🚧 " + originalTitle;
 }
