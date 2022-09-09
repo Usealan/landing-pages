@@ -20,7 +20,7 @@ console.log("Source Code: " + sourceCode);
 console.log("Campaign ID: " + campaignId);
 console.log("Referral Code: " + referralCode);
 
-$(".lp").attr("data-internal-id", internal_id);      
+$(".lp").attr("data-internal-id", internal_id);
 $(".lp").attr("data-public-id", public_id);
 $(".lp").attr("data-hairclub-center-id", hairclub_center_id);
 
@@ -70,7 +70,9 @@ $("#form").submit(function(e) {
   $(".lp").attr("data-email", email);
   $(".lp").attr("data-phone", phone);
   $(".grid h3 strong").text(firstName);
-          
+  
+  // Create lead in ALAN
+    
   var createLeadSettings = {
     "url": "https://smsportal.gymlaunchsecrets.com/webhooks/create_lead/" + public_id,
     "method": "POST",
@@ -82,9 +84,7 @@ $("#form").submit(function(e) {
       "utm_source": "HairClub Landing Pages"
     }),
   };
-  
-  // Create lead in ALAN
-  
+    
   $.ajax(createLeadSettings).done(function (response) {
     if (response.status == "success") {
       var lead_id = response.data.contact_id;
@@ -264,6 +264,37 @@ $("#form").submit(function(e) {
               $(".lp").removeClass("show-grid");
               $(".lp").addClass("show-confirmation");
               console.log("Appointment schedule successfully! We'll see on " + selectedDatetimeText + ".");
+
+              // Create appointment in ALAN
+              
+              var userId = $("body").attr("data-internal-id");
+              var contactId = $("body").attr("data-alan-lead-id");
+              
+              var createAlanAppointment = {
+                "url": "https://calendar.usealan.com/api/appointments/new",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                  "Content-Type": "application/json"
+                },                
+                "data": JSON.stringify({
+                  "user_id": userId,
+                  "contact_id": contactId,
+                  "datetime": selectedDatetime,
+                  "ucode": contactId
+                }),
+              };
+              
+              setTimeout(function(){
+                $.ajax(createAlanAppointment).done(function (response) {
+                  if (response.status == "success") {
+                    console.log(response.status);
+                  } else {
+                    console.log(response.status);
+                  }
+                });
+              }, 1000);
+              
             } else {
               alert("We encountered an error scheduling your appointment. Please try again.")
             }
