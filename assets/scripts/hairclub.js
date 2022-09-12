@@ -118,7 +118,7 @@ $("#form").submit(function(e) {
       "zipCode": hairclub_zip_code,
       "email": email,
       "phone": phone,
-      "firstName": "Test_" + firstName,
+      "firstName": firstName,
       "lastName": lastName,
       "sourceCode": sourceCode
     }),
