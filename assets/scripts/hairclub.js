@@ -228,6 +228,7 @@ $("#form").submit(function(e) {
         var selectedDatetime = $(this).attr("data-day") + " " + $(this).attr("data-time");
         $("body").attr("data-selected-datetime", selectedDatetime);
         var selectedDatetimeText = moment(selectedDatetime).format("MMMM DD, YYYY") + " at " + moment(selectedDatetime).format("LT");
+        $("body").attr("data-selected-datetime-text", selectedDatetimeText);
         $(".modal .summary .value.name").text($("body").attr("data-first-name") + " " + $("body").attr("data-last-name"));
         $(".modal .summary .value.date-time").text(selectedDatetimeText);
         $(".lp").addClass("show-modal");
@@ -292,6 +293,7 @@ $("#form").submit(function(e) {
                   } else {
                     console.log(response.status);
                   }
+                  window.location.href = "/hairclub/confirmation?datetime=" + $("body").attr("data-selected-datetime-text");
                 });
               }, 1000);
               
