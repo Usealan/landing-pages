@@ -261,9 +261,9 @@ $("#form").submit(function(e) {
                 <h3>Appointment confirmed!</h3>\
                 <p>Thank you, you're all set! We look forward to seeing you on " + selectedDatetimeText + ".</p>\
               ");
-              $(".lp").removeClass("show-modal");
-              $(".lp").removeClass("show-grid");
-              $(".lp").addClass("show-confirmation");
+              // $(".lp").removeClass("show-modal");
+              // $(".lp").removeClass("show-grid");
+              // $(".lp").addClass("show-confirmation");
               console.log("Appointment schedule successfully! We'll see on " + selectedDatetimeText + ".");
 
               // Create appointment in ALAN
