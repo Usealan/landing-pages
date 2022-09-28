@@ -44,7 +44,7 @@ a { color: var(--color-link); }
 .lp .hero p { font-size: 18px; line-height: 1.8; margin: 0 0 30px; max-width: 400px; }
 .lp .hero p.terms-text { font-size: 12px; opacity: 0.6; padding: 0 5px; width: 100%; max-width: 400px; margin: 0; text-align: center; }
 .lp .hero .image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 10; }
-.lp .hero .image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.lp .hero .image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .lp .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0; }
 .lp input, .lp button { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
 .lp input[type=text] { display: inline-block; width: calc(50% - 7px); }
