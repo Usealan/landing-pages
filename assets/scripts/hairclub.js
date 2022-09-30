@@ -74,7 +74,7 @@ $("#form").submit(function(e) {
   // Create lead in ALAN
     
   var createLeadSettings = {
-    "url": "https://smsportal.gymlaunchsecrets.com/webhooks/create_lead/" + public_id,
+    "url": "https://smsportal.usealan.com/webhooks/create_lead/" + public_id,
     "method": "POST",
     "data": JSON.stringify({
       "first_name": firstName,
