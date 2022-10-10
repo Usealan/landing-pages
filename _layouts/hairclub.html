@@ -57,17 +57,17 @@
     </div>
     
     <div class="hero">
-      <div class="image fade-in" style="animation-delay: 0.5s;">
+      <div class="image">
         <img src="{{ page.hero_image }}">
       </div>
       <div class="container">
         <div class="hero-text">
-          <h1 class="fade-in" style="animation-delay: 1s;">{{ page.hero_headline }}</h1>
-          <p class="fade-in" style="animation-delay: 1.5s;">{{ page.hero_subtext }}</p>
+          <h1>{{ page.hero_headline }}</h1>
+          <p>{{ page.hero_subtext }}</p>
         </div>
-        <div class="form fade-in" style="animation-delay: 2s;">
+        <div class="form">
           <form id="form" method="POST">
-            <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off" class="fade-in">
+            <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off">
             <input type="text" id="last-name" name="Last Name" placeholder="Last Name" required=""  autocomplete="off">
             <input type="email" id="email" name="Email" placeholder="Email" pattern="^\S+@\S+$" required=""  autocomplete="off">
             <input type="tel" id="phone" name="Phone" placeholder="Phone Number" pattern="^(\d{7}|\d{10})$" title="Ten digit number, no dashes or special characters." required=""  autocomplete="off">
@@ -75,7 +75,8 @@
             <div>
               <button type="submit">Sign Up</button>
             </div>
-            <p>By clicking "Sign Up" you agree to our <a href="https://www.hairclub.com/terms-of-use" target="_blank">Terms & Conditions</a>.</p>
+            <!--<p>By clicking "Sign Up" you agree to our <a href="https://www.hairclub.com/terms-of-use" target="_blank">Terms & Conditions</a>.</p>-->
+            <p>By submitting this form, I expressly consent to being contacted by HairClub and its respective contractors and agents regarding services or products via live or pre-recorded telephone calls, text messages, and emails, including through an automated telephone dialing system. I understand that I’m not required to give consent as a condition of purchasing any services or products from HairClub. I also agree to HairClub’s <a href="https://www.hairclub.com/terms-of-use" target="_blank">TOC</a> and <a href="https://www.hairclub.com/privacy-policy" target="_blank">Privacy Policy</a>.</p>
           </form>
         </div>
       </div>
@@ -144,7 +145,7 @@
     <ul id="raw-list"></ul>
     
     {% if page.features_title %}
-    <div class="features fade-in" style="animation-delay: 2.5s;">
+    <div class="features">
       <div class="container">
         <h2>{{ page.features_title }}</h2>
         {% if page.features_subtext %}
@@ -184,7 +185,7 @@
     {% endif %}
 
     {% if page.about_title %}
-    <div class="about fade-in" style="animation-delay: 2.5s;">
+    <div class="about">
       <div class="container">
         <div class="content">
           {% if page.about_comparison == true %}
@@ -209,7 +210,7 @@
     {% endif %}
     
     {% if page.footer_cta_title %}
-    <div class="footer-cta fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 2.5s;">
+    <div class="footer-cta" style="background: {{ page.business_primary_color }}; color: white;">
       <div class="container">
         <h2>{{ page.footer_cta_title }}</h2>
         <p>{{ page.footer_cta_subtitle }}</p>
@@ -218,7 +219,7 @@
     </div>
     {% endif %}
     
-    <div class="footer fade-in" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 2.5s;">
+    <div class="footer" style="background: {{ page.business_primary_color }}; color: white; animation-delay: 2.5s;">
       <div class="container">
         {% if page.footer_text %}
         <p>{{ page.footer_text }}</p>
