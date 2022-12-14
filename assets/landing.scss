@@ -61,7 +61,7 @@ a { color: var(--color-link); }
 .lp button[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
 .lp button[type=submit]:hover { transform: translateY(-2px); }
 .lp button[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
-.lp .hero .form p { font-size: 12px !important; text-align: center; margin: 20px auto !important; opacity: 0.6; letter-spacing: 0.1px; }
+.lp .hero .form p { font-size: 10px !important; text-align: center; margin: 0 auto 10px !important; opacity: 0.6; letter-spacing: 0.1px; }
 .lp iframe { position: relative; width: 100%; border: 0 none; height: 100%; }
 
 .lp .features { position: relative; background: #FAFAFA; padding: 80px 20px; overflow: hidden; text-align: center; font-size: 17px; line-height: 1.8; }
@@ -229,7 +229,7 @@ a { color: var(--color-link); }
 }
 
 @media screen and (max-width: 400px) {
-  .lp .hero .form p { margin: 15px auto 0 !important; font-size: 9px !important; }
+  .lp .hero .form p { font-size: 9px !important; }
 }
       
 @keyframes fade-in-animation {
