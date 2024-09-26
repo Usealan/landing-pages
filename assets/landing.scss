@@ -18,7 +18,7 @@ html, body { padding: 0; margin: 0; }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
 
-body { font-family: "Inter", sans-serif; background: var(--color-background); color: var(--color-text); }
+body { font-family: "Inter", sans-serif; color: var(--color-text); }
 h1, h2, h3, h4, h5, h6, p { margin: 0; }
 
 a { color: var(--color-link); }
@@ -30,22 +30,20 @@ a { color: var(--color-link); }
 .inline-block { display: inline-block; }
   .width-full { width: 100%; }
 
-.fade-in { animation-duration: 1s; animation-fill-mode: forwards; animation-name: fade-in-animation; backface-visibility: hidden; opacity: 0; }
-.fade-out { animation-name: fade-in-fade-out-animation; }      
-.lp { position: relative; color: #323648; color: #1D263A; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; max-width: 2000px; margin: 0 auto; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+.lp { position: relative; color: #323648; color: #1D263A; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; max-width: 2000px; margin: 0 auto; box-shadow: 0 0 8px rgba(0,0,0,0.1); min-height: 100vh; background: #F2F2F2; }
 .lp .container { width: calc(100% - 30px); max-width: 950px; margin: 0 auto; position: relative; }
-.lp .header { position: absolute; top: 0; left: 0; width: 100%; padding: 60px 0; z-index: 10; }
+.lp .header { position: relative; width: 100%; padding: 0 0 50px; }
 .lp .header .logo { position: relative; width: 100%; max-width: 200px; font-size: 0; }
 .lp .header .logo a { display: inline-block; }
 .lp .header .logo img, .lp .header .logo svg { max-width: 100%; height: 50px; }
 .lp .hero { position: relative; background: white; text-align: left; padding: 60px 0; box-shadow: 0 0 6px rgba(0,0,0,0.05); z-index: 2; overflow: hidden; }
-.lp .hero-text { position: relative; padding: 110px 50px 0 0; }
-.lp .hero h1 { font-size: 38px; max-width: 400px; margin: 0 0 20px; }
+.lp .hero-text { position: relative; padding: 0 50px 0 0; }
+.lp .hero h1 { font-size: 35px; max-width: 400px; margin: 0 0 20px; }
 .lp .hero p { font-size: 18px; line-height: 1.8; margin: 0 0 30px; max-width: 400px; }
 .lp .hero p.terms-text { font-size: 12px; opacity: 0.6; padding: 0 5px; width: 100%; max-width: 400px; margin: 0; text-align: center; }
 .lp .hero .image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 10; }
 .lp .hero .image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.lp .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0; }
+.lp .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0; padding: 0 0 20px; }
 .lp input, .lp button { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
 .lp input[type=text] { display: inline-block; width: calc(50% - 7px); }
 .lp input[type=text]:first-child { margin-right: 14px; }
@@ -61,7 +59,7 @@ a { color: var(--color-link); }
 .lp button[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
 .lp button[type=submit]:hover { transform: translateY(-2px); }
 .lp button[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
-.lp .hero .form p { font-size: 10px !important; text-align: center; margin: 0 auto 10px !important; opacity: 0.6; letter-spacing: 0.1px; }
+.lp .hero .form p { font-size: 11px; color: #666666; text-align: center; margin: 0 auto 10px !important; letter-spacing: 0.1px; }
 .lp iframe { position: relative; width: 100%; border: 0 none; height: 100%; }
 
 .lp .features { position: relative; background: #FAFAFA; padding: 80px 20px; overflow: hidden; text-align: center; font-size: 17px; line-height: 1.8; }
@@ -89,7 +87,7 @@ a { color: var(--color-link); }
 .lp .about.inverted .image { left: auto; right: 0; }
 .lp .about.inverted .content { margin: 0 50% 0 0; padding: 20px 60px 20px 0; }
 
-.lp .footer-cta { padding: 60px 20px; text-align: center; }
+.lp .footer-cta { padding: 60px 20px; text-align: center; opacity: 0.9; }
 .lp .footer-cta:before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.025); }
 .lp .footer-cta h2 { font-size: 34px; max-width: 460px; margin: 0 auto 30px; }
 .lp .footer-cta p { font-size: 20px; margin: 0 auto 40px; max-width: 600px; line-height: 1.6; }
@@ -102,9 +100,9 @@ a { color: var(--color-link); }
 .lp .footer .links li a { text-decoration: none; color: inherit; }
 .lp .footer .links li a:hover { text-decoration: underline; }
 .lp .footer .links li.copyright { display: block; padding-top: 15px; line-height: 1; font-weight: 600; }
-.lp .footer .footer-icon { display: block; position: relative; width: 30px; height: 30px; margin: 40px auto 0; opacity: 0.4; transition: opacity 0.3s ease; cursor: pointer; }
+.lp .footer .footer-icon { display: block; position: relative; width: 30px; height: 30px; margin: 40px auto 0; opacity: 0.3; transition: opacity 0.3s ease; filter: grayscale(1); cursor: pointer; }
 .lp .footer .footer-icon img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
-.lp .footer .footer-icon:hover { opacity: 1; }
+.lp .footer .footer-icon:hover { opacity: 1; filter: grayscale(0); }
 .lp.show-calendar .hero .logo { margin: 0 auto 20px; }
 .lp.show-calendar .hero .image { display: none; }
 .lp.show-calendar .hero-text { display: none; }
@@ -195,13 +193,13 @@ a { color: var(--color-link); }
 
 @media screen and (max-width: 1023px) {
   .lp .container { width: 100%; top: auto; transform: none; margin: 0 auto; }
-  .lp .header { position: relative; top: auto; left: auto; padding: 10px 0; background: white; box-shadow: 0 0 6px rgba(0,0,0,0.05); }
+  .lp .header { position: relative; padding: 10px 0; background: white; box-shadow: 0 0 6px rgba(0,0,0,0.05); z-index: 100; }
   .lp .header .logo { max-width: 150px; margin: 0 auto; }  
   .lp .hero { padding: 0 0 30px; }
   .lp .hero .container { width: 100%; padding: 0 30px; margin: 0 auto; }
-  .lp .hero .image { top: 0; left: 0; width: 100%; height: 260px; }
-  .lp .hero-text { padding: 290px 0 0; text-align: center; }
-  .lp .hero h1 { font-size: 28px; max-width: 300px; margin: 0 auto 20px; }
+  .lp .hero .image { position: relative; top: 0; left: 0; width: 100%; height: 220px; }
+  .lp .hero-text { padding: 30px 0 0; text-align: center; }
+  .lp .hero h1 { font-size: 28px; max-width: 320px; margin: 0 auto 20px; }
   .lp .hero p { font-size: 16px; margin: 0 auto 20px; max-width: 320px; }
   .lp .hero p.terms-text { font-size: 12px; margin: 0 auto; padding: 0; line-height: 1.4; max-width: 200px; }
   .lp .features { padding: 40px 0 10px; }
@@ -215,7 +213,7 @@ a { color: var(--color-link); }
   .lp .about .image { position: relative; width: 100%; height: 0; padding: 0 0 56.25%; margin: 0 0 30px; top: auto; left: auto; }
   .lp .about h2 { font-size: 24px; }
   .lp .about p { font-size: 16px; }
-  .lp .form { margin: 0 auto; max-width: 320px; }
+  .lp .form { margin: 0 auto; max-width: 320px; padding: 0 0 10px; }
   .lp .grid { padding: 30px 0; }
   .lp .features p { margin-bottom: 40px; }
   .lp .footer-cta { padding: 50px 20px; }
@@ -226,15 +224,6 @@ a { color: var(--color-link); }
   .lp .about .image.with-comparison { padding: 0 0 100%; left: 0; height: 0; max-width: none; }
   .lp .inner-modal h2 { font-size: 16px; }
   .lp .modal .close { top: 10px; right: 0; }
-}
-
-@media screen and (max-width: 400px) {
-  .lp .hero .form p { font-size: 9px !important; }
-}
-      
-@keyframes fade-in-animation {
-  0%   { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: none; }
 }
 
 @keyframes blink {
