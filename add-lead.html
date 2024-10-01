@@ -1,0 +1,136 @@
+---
+permalink: /add-lead/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <title>Add Lead</title>
+    <meta name="description" content="{{ page.campaign_description }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no" />
+    <link rel="apple-touch-icon" href="https://usealan.com/assets/images/icon.png">
+    <link rel="shortcut icon" href="https://usealan.com/assets/images/icon.ico" />
+    <style>
+      @import url("https://rsms.me/inter/inter.css");
+      * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+      html, body { padding: 0; margin: 0; }
+      .embed { position: relative; color: #323648; color: #1D263A; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+      .embed .form { position: relative; width: 100%; max-width: 400px; font-size: 0; margin: 0 auto; padding: 0 0 20px; }
+      .embed input, .embed button { -webkit-appearance: none; appearance: none; border: 0 none; outline: 0 none; font-family: inherit; font-weight: inherit; background: transparent; color: inherit; border-radius: 5px; font-size: 16px; padding: 12px; width: 100%; margin: 0 0 14px; background: white; }
+      .embed input[type=text] { display: inline-block; width: calc(50% - 7px); }
+      .embed input[type=text]:first-child { margin-right: 14px; }
+      .embed input[type=text],
+      .embed input[type=email],
+      .embed input[type=tel] { border: 1px solid #DDDDDD; transition: border 0.3s ease; }
+      .embed input[type=text]:hover,
+      .embed input[type=email]:hover,
+      .embed input[type=tel]:hover { border: 1px solid #CCCCCC; }
+      .embed input[type=text]:focus,
+      .embed input[type=email]:focus,
+      .embed input[type=tel]:focus { border: 1px solid #227EF7; }
+      .embed button[type=submit] { font-size: 17px; background: #227EF7; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 -1px 0 rgba(0,0,0,0.2) inset; font-weight: 600; padding: 12px 20px; margin-top: 5px; border: 2px solid #227EF7; margin-bottom: 0; transition: transform 0.3s ease; cursor: pointer; }
+      .embed button[type=submit]:hover { transform: translateY(-2px); }
+      .embed button[type=submit]:focus { border: 2px solid white; outline: 1px solid #227EF7; box-shadow: 0 0 0 transparent; }
+      .embed p { font-size: 11px; color: #666666; text-align: center; margin: 0 auto 10px !important; letter-spacing: 0.1px; }
+      .embed p a { color: inherit; }
+    </style>
+  </head>
+  
+  <body>
+    
+    <div class="embed">
+      <div class="form">
+        <form id="form" method="POST">
+          <input type="text" id="first-name" name="First Name" placeholder="First Name" required="" autocomplete="off">
+          <input type="text" id="last-name" name="Last Name" placeholder="Last Name" required="" autocomplete="off">
+          <input type="email" id="email" name="Email" placeholder="Email" pattern="^\S+@\S+$" required="" autocomplete="off">
+          <input type="tel" id="phone" name="Phone" placeholder="Phone Number" pattern="^(\d{7}|\d{10})$" title="Ten digit number, no dashes or special characters." required="" autocomplete="off">
+          <input type="text" id="campaign" name="Campaign" placeholder="Typelaunch Form" value="typelaunch-form" style="display: none;">
+          <p>By clicking "Sign Up" you agree to our <a href="https://usealan.com/terms/" target="_blank">Terms &amp; Conditions</a>.</p>
+          <div>
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script>
+      
+      // Read URL parameters
+      
+      var getUrlParameter=function(r){var t,e,n=decodeURIComponent(window.location.search.substring(1)).split("&");for(e=0;e<n.length;e++)if((t=n[e].split("="))[0]===r)return void 0===t[1]||t[1]};
+      
+      // Default parameters
+      
+      if ( getUrlParameter("short-id") ) {
+        var shortId = getUrlParameter("short-id");
+      } else {
+        var shortId = "6749"; // "ALAN Test Account" Short ID
+      };
+      
+      if ( getUrlParameter("long-id") ) {
+        var longId = getUrlParameter("long-id");
+      } else {
+        var longId = "674966f6c3b72268e"; // "ALAN Test Account" Long ID
+      };
+
+      if ( getUrlParameter("campaign") ) {
+        var campaign = getUrlParameter("campaign");
+      } else {
+        var campaign = "294";
+      };
+
+      if ( getUrlParameter("main-color") ) {
+        var mainColor = getUrlParameter("main-color");
+      } else {
+        var mainColor = "5F6EEE";
+      };
+                  
+      // Replace URL parameter
+      
+      window.history.replaceState(null, null, "?short-id=" + shortId + "&long-id=" + longId + "&campaign=" + campaign + "&main-color=" + mainColor );
+
+      // Set button color
+      
+      $("#form button[type='submit']").attr("style","background-color: #" + mainColor + "; border-color: #" + mainColor);
+
+
+      // Form submission
+      
+      $("#form").submit(function(e) {
+        e.preventDefault();
+        $("button[type=submit]").html("Submitting...");
+        var firstName = $("#first-name").val();
+        var lastName  = $("#last-name").val();
+        var email     = $("#email").val();
+        var phone     = $("#phone").val();
+        // Create lead in ALAN
+        var createLeadSettings = {
+          "url": "https://smsportal.usealan.com/webhooks/create_lead/" + longId + "/" + campaign,
+          "method": "POST",
+          "data": JSON.stringify({
+            "first_name": firstName,
+            "last_name": lastName,
+            "phone": phone,
+            "email": email,
+            "utm_source": "Typelaunch"
+          }),
+        };
+        $.ajax(createLeadSettings).done(function (response) {
+          if (response.status == "success") {
+            var leadId = response.data.contact_id;
+            $(".lp").attr("data-alan-lead-id", leadId);
+            setTimeout(function() {
+              window.top.location.href = "/schedule?short-id=" + shortId + "&long-id=" + longId + "&campaign=" + campaign + "&main-color=" + mainColor + "&lead-first-name=" + firstName + "&lead-id=" + leadId;
+            }, 1000); // 1 second delay
+          } else {
+            console.log(response.status);
+          }
+        });
+      }); // End form submission
+    </script>
+  </body>
+</html>
